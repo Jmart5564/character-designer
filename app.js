@@ -21,15 +21,21 @@ headSelect.addEventListener('change', () => {
 
 middleSelect.addEventListener('change', () => {
     // *** Complete the middle select change handler
+    character.middle = middleSelect.value;
+    displayDesign;
 });
 
 pantsSelect.addEventListener('change', () => {
     // *** Complete the pants select change handler
+    character.pants = pantsSelect.value;
+    displayDesign;
 });
 
 function displayDesigner() {
     headSelect.value = character.head;
     // *** Assign the initial values of the middle select and pants select!
+    middleSelect.value = character.middle;
+    pantsSelect.value = character.pants;
 }
 
 // AddPhrase
@@ -69,6 +75,7 @@ function displayCharacter() {
     // You can use:
     // 'assets/character/' + <get prop value here> + '-head.png'
     // to format the correct file name
+
 }
 
 // Phrases
