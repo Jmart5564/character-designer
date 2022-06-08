@@ -37,16 +37,22 @@ const addPhraseSection = document.getElementById('add-phrase-section');
 const phraseInput = addPhraseSection.querySelector('input');
 // *** Select the button from the add phrase section
 // const phraseButton = ?;
+const phraseButton = addPhraseSection.querySelector('button');
 
 function handleAddPhrase() {
     // *** add the current phrase value to the character phrases
+    const phrase = phraseInput.value;
 
+    character.phrases.push(phrase);
     displayPhrases();
     phraseInput.value = '';
     phraseInput.focus();
 }
 
 // *** Add a click handler to the phrase button that calls handleAddPhrase
+phraseButton.addEventListener('click', () => {
+    handleAddPhrase();
+});
 
 phraseInput.addEventListener('keypress', (e) => {
     if (e.key === 'Enter') {
@@ -73,6 +79,11 @@ function displayPhrases() {
     phraseList.innerHTML = '';
 
     // ** Create an li for each phrase and append to the list
+    for (const phrase of character.phrases) {
+        const li = document.createElement('li');
+        li.textContent = phrase; 
+        phraseList.append(li);
+    }
 }
 
 // page load actions
