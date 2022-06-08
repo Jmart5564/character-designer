@@ -48,6 +48,9 @@ const phraseButton = addPhraseSection.querySelector('button');
 function handleAddPhrase() {
     // *** add the current phrase value to the character phrases
     const phrase = phraseInput.value;
+    if (phrase === '') {
+        return;
+    }
 
     character.phrases.push(phrase);
     displayPhrases();
