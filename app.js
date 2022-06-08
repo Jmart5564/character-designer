@@ -22,13 +22,13 @@ headSelect.addEventListener('change', () => {
 middleSelect.addEventListener('change', () => {
     // *** Complete the middle select change handler
     character.middle = middleSelect.value;
-    displayDesign;
+    displayDesign();
 });
 
 pantsSelect.addEventListener('change', () => {
     // *** Complete the pants select change handler
     character.pants = pantsSelect.value;
-    displayDesign;
+    displayDesign();
 });
 
 function displayDesigner() {
@@ -75,7 +75,9 @@ function displayCharacter() {
     // You can use:
     // 'assets/character/' + <get prop value here> + '-head.png'
     // to format the correct file name
-
+    headImage.src = 'assets/character/' + character.head + '-head.png';
+    middleImage.src = 'assets/character/' + character.middle + '-middle.png';
+    pantsImage.src = 'assets/character/' + character.pants + '-pants.png';
 }
 
 // Phrases
